@@ -100,7 +100,7 @@
                                             <h3>Have Fun Learning</h3>
                                             <h2>English Online </h2>
                                             <p>Play games, sing songs, and go on learning adventures with our amazing English teachers.</p>
-                                            <a class="default-btn" href="#" data-toggle="modal" data-target="#exampleModalCenter">One Free Lesson</a>
+                                            <a class="default-btn" href="requestmodal.html" data-toggle="modal" data-target="#theModal">One Free Lesson</a>
                                         </div>
                                     </div>
                                 </div>
@@ -622,88 +622,12 @@
             </div>
         </footer>
         <!-- Footer End -->
-
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
+        <div id="theModal"  tabindex="-1" role="dialog" class="modal fade text-center">
+            <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <div class="course-title">
-                            <h3>$50 Value</h3>
-                        </div>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form enctype='application/json' class="pr-4 pl-4 pb-4" id="register" action="https://prod-20.eastus.logic.azure.com:443/workflows/a8bed9230a7445338ffbbecaa103ec67/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=tz8jPn70VwbD7XM6aZw6T2gNB_sxAutBWp5I-hKv6cA" method="post">
-                            <input type="hidden" name="test" value="off">
-                            <input type="hidden" name="owner" value="4eb04692-01f8-e911-a812-000d3a593b1e">
-                            <input type="hidden" name="website" value="Tao Lingo">
-                            <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
-                            <input type="text" name="_gotcha" style="display:none" />
-                            <div class="row text-center">
-                                    <a href="../"><object data="img/logo/red/out/taolingo_white.svg"  type="image/svg+xml" class="logo1" alt="Tao Lingo">
-                                        <img src="img/logo/red/out/taolingo_white@2x.png" />
-                                    </object></a></div>
-                                    <div class="row">
-                                <p class="lead text-center text-light p-2">Fill out the form to get a free course.</p>
-                                <div class="col-sm-6">
-                                    <div class="form-group md-form">
-                                        <input type="text" name="firstname" class="form-control input-material" placeholder="First Name" autocomplete="off" required>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group md-form">
-                                        <input type="text" name="lastname" class="form-control input-material" placeholder="Last Name" autocomplete="off" required>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="form-group md-form">
-                                        <textarea id="message" name="message" maxlength="1500" class="form-control text-light input-material" placeholder="What would you like to learn？" rows="3"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="form-group md-form">
-                                        <input type="email" name="email" class="form-control input-material" placeholder="Email Address" autocomplete="off" required>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group md-form">
-                                        <select class="form-control input-material" name="interest" id="interest">
-                                            <option value="Level" selected="selected">Choose a Level</option>
-                                            <option value="Beginner">Beginner</option>
-                                            <option value="Intermediate">Intermediate</option>
-                                            <option value="Advanced">Advanced</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="form-group md-form">
-                                        <input type="tel" id="tel" name="tel" class="form-control input-material" autocomplete="off" required placeholder="Phone Number">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <h3 class="text-center" id="exampleModalLongTitle">1 Free Class</h3>
-                                </div>
-                            </div>
-                            <div class="form-group text-center">
-                                    <div id="js-contact-result" data-success-msg="Success, Please check your email." data-error-msg="Oops! Something went wrong"></div>
-                                    <button type="submit" class="btn default-btn">Submit</button>
-                            </div><!-- // end .form-group -->
-                        </form> 
-                    </div>
                 </div>
             </div>
         </div>
-
-
         <script src="js/vendor/jquery-1.12.0.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/jquery.meanmenu.js"></script>
@@ -715,49 +639,6 @@
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
         <script src="js/jquery.validate.js"></script>
-        <script>
-            $("#register").validate();
-            $("#register").submit(function(event){
-            if (!$("#register").validate().form()) {
-            return false; //doesn't validate
-            }else
-            {
-            event.preventDefault(); //prevent default action 
-            var post_url = $(this).attr("action"); //get form action url
-            var request_method = $(this).attr("method"); //get form GET/POST method
-            var content_type = $(this).attr("enctype"); //get form GET/POST method
-            var form_data = $(this).serialize(); //Encode form elements for submission
-            
-            $.ajax({
-                    type: $(this).attr('method'),
-                    url: $(this).attr('action'),
-                    data: $(this).serialize(),
-                    success: function (data) {
-                        $("#register")[0].reset();
-                        $("input:checkbox").attr('checked', false);
-                        Swal({
-                        title: '<strong>Submission Successful</strong>',
-                        type: 'success',
-                        html:
-                            'We received your request. A representative will get in touch soon!',
-                        showCloseButton: true,
-                        focusConfirm: false,
-                        confirmButtonText:
-                            '<a style="color: white" href="courses.html"><i class="fa fa-address-card"></i> Go to Courses</a>',
-                        confirmButtonAriaLabel: 'Go to Courses',
-                    });
-                        console.log('Submission was successful.');
-                        console.log(data);   
-                    },
-                    error: function (data) {
-                        console.log('An error occurred.');
-                        console.log(data);
-                    },
-                }).then(function(response){ //
-                $("#server-results").html(response);
-            }); //form is validated do your work
-            }        
-        });
-        </script>
+        <script src="js/swal-response.js"></script>
     </body>
 </html>

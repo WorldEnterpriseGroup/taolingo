@@ -26,7 +26,6 @@
         <meta name="theme-color" content="#ffffff">
         <!-- Place favicon.ico in the img/icon/fav directory -->
         <script src="js/sweetalert2/dist/sweetalert2.all.min.js"></script>
-        <script src="js/coursecalc.js"></script>
 
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/animate.css">
@@ -162,11 +161,23 @@
                                         <p>I must explain to you how all this a mistaken idea of ncing great explorer of the rut the is lder of human</p>
                                     </div>
                                 </div>
-                                <div class="course-details-right">
-                                    <h3 class="text-center">CONFIGURE OPTIONS</h3>
+                                <div id="courseconfig" class="course-details-right">
+                                    <h3 class="text-center">COURSE CONFIGURATOR</h3>
                                     <form action="#" method="post" id="courseform" class="course-form">
                                         <ul>
-                                            <li>Starting Date <span><select id="startdate" name="startdate"
+                                                <li>Students <span><select id="students" name="students"
+                                                    onchange="coursecalc()" class="text-center" class="course-form">
+                                                    <option value="1" selected="selected">One</option>
+                                                    <option value="2">Two</option>
+                                                    <option value="3">Three</option>
+                                                    <option value="4">Four</option>
+                                                    <option value="5">Five</option>
+                                                    <option value="10">Ten</option>
+                                                    <option value="20">Twenty</option>
+                                                    <option value="50">Fifty</option>
+                                                   </select>
+                                                </span></li>
+                                            <!-- <li>Starting Date <span><select id="startdate" name="startdate"
                                                 onchange="coursecalc()" class="text-center" class="course-form">
                                                 <option value="Now">Now</option>
                                                 <option value="January">January</option>
@@ -182,14 +193,14 @@
                                                 <option value="November">November</option>
                                                 <option value="December">December</option>
                                                </select>
-                                            </span></li>
+                                            </span></li> -->
                                             <li>Duration <span><select id="months" class="course-form" name="months"
                                                 onchange="coursecalc()">
                                                 <option value="1">1 Month</option>
                                                 <option value="6">1 Semester</option>
-                                                <option value="11.5" selected="selected">1 Year</option>
-                                                <option value="22.5">2 Years</option>
-                                                <option value="45">4 Years</option>
+                                                <option value="12" selected="selected">1 Year</option>
+                                                <option value="24">2 Years</option>
+                                                <option value="48">4 Years</option>
                                                </select></span></li>
                                             <li>Private Lessons <span><select id="lessons" class="course-form" name="lessons"
                                                 onchange="coursecalc()">
@@ -211,40 +222,32 @@
                                                 <option value="Social">Social</option>
                                                 <option value="Business">Business</option>
                                                </select></span></li>
-                                            <li>Monthly Price <span><div id="monthPriceTotal">$232</div></span></li>
-                                            <li>Total Price <span><div id="priceTotal">$1232</div></span></li>
+                                            <li>Monthly Price <span><div id="monthlyPlanTotal">$2033</div></span></li>
+                                            <li>Total Price <span><div id="priceTotal">$20326</div></span></li>
                                         </ul>
                                         <div class="text-center">
-                                        <button id="courseregisterpreview" class="default-btn text-center" type="submit" name="registerpreview"><span>Register Now</span></button>
-                                        <p><small>Above options will be used</small></p>
+                                        <a class="default-btn text-center" href="requestmodal.html" data-toggle="modal" data-target="#theModal" type="button" name="registerpreview"><span>Schedule a Lesson</span></a>
                                         </div>
                                     </form>
                                 </div>
-                            </div>    
-                            <div class="reply-area">
-                                <h3>LEAVE A REPLY</h3>
-                                <p>I must explain to you how all this a mistaken idea of ncing great explorer of the rut<br> the is lder of human happinescias unde omnis iste natus error sit volptatem </p>
-                                <form id="contact-form" action="mail.php" method="post">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <p>Name</p>
-                                            <input type="text" name="name" id="name">
+                            </div>
+                            <div class="single-event mb-35">
+                                    <div class="event-date">
+                                        <h3><a href="requestmodal.html" data-toggle="modal" data-target="#theModal"><i class="fa fa-comments fa-2x"></i></a></h3>
+                                    </div>
+                                    <div class="event-content text-left">
+                                        <div class="event-content-left">
+                                            <h4><a href="requestmodal.html" data-toggle="modal" data-target="#theModal"><h3>Call Us <i class="fa fa-phone"></i> +1 929-229-2918</h3></a></h4>
+                                            <ul>
+                                                <li><i class="fa fa-clock-o"></i>9.00 AM - 5:00 PM EST</li>
+                                                <li><i class="fa fa-map-marker"></i>New York City</li>
+                                            </ul>
                                         </div>
-                                        <div class="col-md-12">
-                                            <p>Email</p>
-                                            <input type="text" name="email" id="email">
-                                        </div>
-                                        <div class="col-md-12">
-                                            <p>Subject</p>
-                                            <input type="text" name="subject" id="subject">
-                                            <p>Massage</p>
-                                            <textarea name="message" id="message" cols="15" rows="10"></textarea>
+                                        <div class="event-content-right">
+                                            <a class="default-btn" href="requestmodal.html" data-toggle="modal" data-target="#theModal">Get Your Free Lesson</a>
                                         </div>
                                     </div>
-                                    <a class="reply-btn" href="#" data-text="send"><span>send message</span></a>
-                                    <p class="form-messege"></p>
-                                </form>
-                            </div>
+                                </div>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -276,6 +279,9 @@
                                     <a href="blog-details.html" id="blog"><img src="img/blog/blog-img.jpg" alt="blog"></a>
                                     <h2>best<br> eductaion<br> theme</h2> 
                                 </div>
+                            </div>
+                            <div class="single-blog-widget mb-50">
+                                    <h3>Call Us <i class="fa fa-phone"></i>  929-229-2918</h3>
                             </div>
                             <div class="single-blog-widget mb-50">
                                 <h3>latest post</h3>
@@ -437,6 +443,12 @@
             </div>
         </footer>
         <!-- Footer End -->
+        <div id="theModal"  tabindex="-1" role="dialog" class="modal fade text-center">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                </div>
+            </div>
+        </div>
 
         <script src="js/vendor/jquery-1.12.0.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
@@ -448,5 +460,7 @@
         <script src="js/jquery.nicescroll.min.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/coursecalc.js"></script>
+        <script src="js/jquery.validate.js"></script>
     </body>
 </html>

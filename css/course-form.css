@@ -1,0 +1,26 @@
+.course-form select {
+    width: 120px;
+    padding: 2px 5px;
+    vertical-align: middle;
+    border: 1px solid #e52427;
+    border-radius: 12px;
+    background-color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .course-form input {
+    width: 120px;
+    padding: 0px 5px;
+    border: 1px solid #e52427;
+    border-radius: 1px;
+    background-color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .course-form select:hover {
+    background-color: #e52427;
+    color: #fff;
+    outline-color: red;
+  }

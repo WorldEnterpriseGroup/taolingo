@@ -1,0 +1,72 @@
+<div class="modal-header">
+    <div class="course-title">
+        <h3>$50 Value</h3>
+    </div>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <form enctype='application/json' class="pr-4 pl-4 pb-4" id="register" action="https://prod-20.eastus.logic.azure.com:443/workflows/a8bed9230a7445338ffbbecaa103ec67/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=tz8jPn70VwbD7XM6aZw6T2gNB_sxAutBWp5I-hKv6cA" method="post">
+        <input type="hidden" name="test" value="off">
+        <input type="hidden" name="owner" value="4eb04692-01f8-e911-a812-000d3a593b1e">
+        <input type="hidden" name="website" value="Tao Lingo">
+        <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
+        <input type="text" name="_gotcha" style="display:none" />
+        <div class="row text-center">
+                <a href="../"><object data="img/logo/red/out/taolingo_white.svg"  type="image/svg+xml" class="logo1" alt="Tao Lingo">
+                    <img src="img/logo/red/out/taolingo_white@2x.png" />
+                </object></a></div>
+                <div class="row">
+            <p class="lead text-center text-light p-2">Fill out the form to get a free course.</p>
+            <div class="col-sm-6">
+                <div class="form-group md-form">
+                    <input type="text" name="firstname" class="form-control input-material" placeholder="First Name" autocomplete="off" required>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group md-form">
+                    <input type="text" name="lastname" class="form-control input-material" placeholder="Last Name" autocomplete="off" required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="form-group md-form">
+                    <textarea id="message" name="message" maxlength="1500" class="form-control text-light input-material" placeholder="What would you like to learn？" rows="3"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group md-form">
+                    <input type="email" name="email" class="form-control input-material" placeholder="Email Address" autocomplete="off" required>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group md-form">
+                    <select class="form-control input-material" name="interest" id="interest">
+                        <option value="" selected="selected">Choose a Level</option>
+                        <option value="Beginner">Beginner</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Advanced">Advanced</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group md-form">
+                    <input type="tel" id="tel" name="tel" class="form-control input-material" autocomplete="off" required placeholder="Phone Number">
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <h3 class="text-center" id="exampleModalLongTitle">1 Free Class</h3>
+            </div>
+        </div>
+        <div class="form-group text-center">
+                <div id="js-contact-result" data-success-msg="Success, Please check your email." data-error-msg="Oops! Something went wrong"></div>
+                <button type="submit" onsubmit="swalresponse()" class="btn default-btn">Submit</button>
+        </div><!-- // end .form-group -->
+    </form> 
+</div>

@@ -1497,8 +1497,8 @@ textarea {
     color: #303030;
     margin-bottom: 14px;
 }
-.course-details-right{padding: 45px 35px 45px; border: 1px solid #E1E1E1}
-.course-details-right h3{margin-bottom: 50px}
+.course-details-right{padding: 25px 35px 25px; border: 1px solid #E1E1E1}
+.course-details-right h3{margin-bottom: 1px}
 .course-details-right ul li{
     display: block;
     font-size: 14px;
@@ -2917,3 +2917,18 @@ object{
     border: 1px solid #fff;
     color: #fff;
 }
+
+.black-btn {
+    color: #fff;
+    display: inline-block;
+    font-family: "Open Sans",sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    overflow: hidden;
+    padding: 8px 25px 9px;
+    position: relative;
+    text-transform: uppercase;
+    z-index: 9;
+    background: #000;
+}
+.black-btn:hover {color: #000; background: #fff}

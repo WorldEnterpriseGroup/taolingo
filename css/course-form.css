@@ -2,21 +2,22 @@
     width: 120px;
     padding: 2px 5px;
     vertical-align: middle;
-    border: 1px solid #e52427;
+    border: 1px solid #fff;
     border-radius: 12px;
-    background-color: #fff;
+    background-color: #000;
+    color: #fff;
     text-align: center;
     text-transform: uppercase;
   }
 
   .course-form input {
-    width: 120px;
+    width: 100%;
     padding: 0px 5px;
-    border: 1px solid #e52427;
+    /* border: 1px solid #e52427; */
     border-radius: 1px;
     background-color: #fff;
     text-align: center;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
   }
 
   .course-form select:hover {
@@ -25,3 +26,133 @@
     outline-color: red;
   }
   
+  
+
+/*------>>> Animations <<<-----*/
+.fade {
+  opacity: 0;
+  -webkit-transition: opacity 0.25s ease-in;
+  -moz-transition: opacity 0.25s ease-in;
+  -o-transition: opacity 0.25s ease-in;
+  -ms-transition: opacity 0.25s ease-in;
+  transition: opacity 0.25s ease-in;
+  transition-delay: 0.25s;
+}
+.fade.in{
+  opacity: 1;
+}
+
+.animate-switch-container {
+  position:relative;
+  overflow: hidden;
+  height: 475px;
+  width: 100%;
+}
+.animate-switch{
+  padding:10px;
+  width: 100%;
+}
+.animate-switch.ng-animate {
+  -webkit-transition:all 0.5s;
+  transition:all 0.5s;
+  position:absolute;
+
+}
+/* hide leaving slide  */
+/* show */
+.animate-switch.ng-leave{
+  left:0;
+}
+/* hide */
+.forward .animate-switch.ng-leave.ng-leave-active{
+  left:-100%;
+}
+.backward .animate-switch.ng-leave.ng-leave-active{
+  left: 100%;
+}
+/* show entering slide  */
+/* hide */
+.forward .animate-switch.ng-enter {
+  left:100%;
+}
+.backward .animate-switch.ng-enter {
+  left:-100%;
+}
+/* show */
+.animate-switch.ng-enter.ng-enter-active {
+  left:0;
+}
+
+
+/*-----------------------------------*/
+/*------>>> Validation <<<-----------*/
+/*-----------------------------------*/
+
+.course-form .form-validation input.ng-invalid-maxlength {
+  border:2px solid #D9272D;
+}
+
+
+.course-form .length-error {
+  color: #D9272D;
+  display: block;
+  font-size: 12px;
+  opacity: .8;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  position: relative;
+  line-height: 18px;
+  padding: 10px 10px 5px 10px;
+  margin: -25px 0 20px 0;
+  background-color: #E3E3E3;
+  border-radius: 0 0 5px 5px;
+}
+
+.course-form .input-error {
+  border: 2px solid #D9272D;
+  color: #D9272D;
+}
+
+input:invalid {
+  border: 1px solid red;
+}
+
+/*-----------------------------------*/
+/*------->>> FORM STYLES <<<---------*/
+/*-----------------------------------*/
+
+.note {
+  display: block;
+  font-size: 12px;
+  opacity: .8;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  position: relative;
+  line-height: 18px;
+}
+
+.note-input {
+  padding: 10px 10px 5px 10px;
+  margin: -25px 0 20px 0;
+  background-color: #E3E3E3;
+  border-radius: 0 0 5px 5px;
+}
+
+.note-input-error, .required-error-banner {
+  background-color: rgba(217, 39, 45, 0.5);
+}
+
+/*-----------------------------------*/
+/*----------->>> HELPERS <<<-------------*/
+/*-----------------------------------*/
+
+/*
+  Allow angular.js to be loaded in body, hiding cloaked elements until
+  templates compile.  The !important is important given that there may be
+  other selectors that are more specific or come later and might alter display.
+ */
+[ng\:cloak], [ng-cloak], .ng-cloak {
+    display: none;
+}

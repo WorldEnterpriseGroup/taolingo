@@ -290,12 +290,25 @@
                                             <button type="button" class="btn btn-info" ng-click="back('stage2')">Back</button>
                                             <button type="button" class="btn btn-warning" ng-click="submitForm()">Submit</button>
                                             </div>
-                                            <div class="animate-switch" ng-switch-when="success">
+                                            <div class="animate-switch" ng-switch-when="fullpayment">
                                             <div class="success-wrap">
-                                                <h2 class="confirmation-text">Thank you</h2>
-                                                <p>Your message has been sent.<br>You should receive a confirmation email.</p>
-                                                <div><button type="button" class="btn btn-success" ng-click="reset()" >Send Another</button></div>
+                                                <div class="text-center">
+                                                    <h5>Pay Full Amount: ${{formParams.budget}}</h5>
+                                                    <img style="-webkit-user-select: none;margin: auto;" src="{{fullqrcode}}">
+                                                    <img src="img/icon/chinesepay.png">
+                                                    <div><button type="button" class="btn btn-success" ng-click="next('monthlypayment')" >See Monthly Payment</button></div>
+                                                </div>
                                             </div>
+                                            </div>
+                                            <div class="animate-switch" ng-switch-when="monthlypayment">
+                                                <div class="success-wrap">
+                                                    <div class="text-center">
+                                                        <h5>Pay Monthly: ${{formParams.monthlybudget}}</h5>
+                                                        <img style="-webkit-user-select: none;margin: auto;" src="{{monthlyqrcode}}">
+                                                        <img src="img/icon/chinesepay.png">
+                                                        <div><button type="button" class="btn btn-success" ng-click="back('fullpayment')" >See Full Payment</button></div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="animate-switch" ng-switch-when="error" >
                                             <div class="error-wrap text-center">

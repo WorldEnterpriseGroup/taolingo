@@ -4,7 +4,6 @@
 function coursecalc()
 {
     var theForm = document.forms["courseform"];
-
     var students = Number(document.getElementById('students').value);
     var months = Number(document.getElementById('months').value);
     var lessons = Number(document.getElementById('lessons').value);
@@ -35,7 +34,6 @@ function coursecalc()
     } else if (students == '50') {
         studentCost = 45;
     }
-
     // APPLY DISCOUNT FOR BULK MONTHS
     if (months == '1') {
         monthCost = 1;
@@ -60,12 +58,10 @@ function coursecalc()
         courseCost = Number(2129);
     }
     
-
     // 52/48 is 52 weeks actual and 48 counted in our form which equates around 4.33.
     // Use this to find total number of coachings requested.
     var lessonTotal = lessons * 52/48*4 * levelCost * monthCost * studentCost;
     var courseTotal = monthCost * studentCost * courseCost;
-
     var courseTotalPrice = (lessonTotal + courseTotal + regfee);
     if (months == '1') {
         // add 20% interest for paying monthly
@@ -73,39 +69,36 @@ function coursecalc()
     } else {
         var paymentplan = courseTotalPrice / months * 1.2;
     }
-    
-
-    
-    monthlyPlanTotal = paymentplan.toFixed(0);
+        
     courseTotalPrice = courseTotalPrice.toFixed(0);
-
+    monthlyPlanTotal = paymentplan.toFixed(0);
+    
     document.getElementById('priceTotal').innerHTML = "$" +courseTotalPrice;
     document.getElementById('monthlyPlanTotal').innerHTML = "$" +monthlyPlanTotal;
 
-
     console.log("Lesson Total " +lessonTotal);
     console.log("Course Total " +courseTotal);
-    console.log("Lesson Total " +lessonTotal);
-    console.log("Lesson Total " +lessonTotal);
 
     return courseTotalPrice;
-}
+} // END COURSE CALCULTION
 
 'use strict';
-
 angular.module('formApp', [
   'ngAnimate'
 ]).controller('formCtrl', ['$scope', '$http', '$httpParamSerializerJQLike', function($scope, $http, $httpParamSerializerJQLike) {
   $scope.formParams = {};
   $scope.stage = "";
+  $scope.fullqrcode = "0";
+  $scope.monthlyqrcode = "0";
   $scope.formValidation = false;
   $scope.toggleJSONView = false;
   $scope.toggleFormErrorsView = false;
   
   $scope.formParams = {
+    payneeded: 'yes',
     _gotcha: '',
     website: 'Tao Lingo',
-    test: 'off',
+    test: 'on',
     owner: '76986198-30f2-e911-a972-000d3a34e213',
     fisrtname: '',
     lastname: '',
@@ -154,7 +147,8 @@ angular.module('formApp', [
       console.log("Valid..." +message);
 
       $scope.formParams.message =  message;
-      $scope.formParams.budget = Number($scope.formParams.priceTotal);
+      $scope.formParams.monthlybudget = $scope.formParams.monthlyPlanTotal;
+      $scope.formParams.budget = $scope.formParams.priceTotal;
       $scope.formParams.interest = $scope.formParams.current_level;
       $scope.formParams.time = $scope.formParams.months+ " Months ";
 
@@ -166,20 +160,19 @@ angular.module('formApp', [
           'Content-Type': 'application/x-www-form-urlencoded' // Note the appropriate header
         }
       }).then(function successCallback(response) {
-        if (response
-          && response.data
-          && response.data.status
-          && response.data.status === 'success') {
+
+        // responseconsole.log(JSON.stringify(result))
+        console.log('Response' +JSON.stringify(response));
+        console.log('Response Status = ' +response.status);
+        
+        if (response.status == "200") {
+          $scope.fullqrcode = response.data.full;
+          $scope.monthlyqrcode = response.data.monthly;
             console.log("Success...");
-          $scope.stage = "success";
+          $scope.stage = "fullpayment";
         } else {
-          if (response
-            && response.data
-            && response.data.status
-            && response.data.status === 'error') {
-                console.log("Error ..." +response.data.status );
+                console.log("Status:" +response.status );
             $scope.stage = "error";
-          }
         }
       }, function errorCallback(response) {
         $scope.stage = "error";

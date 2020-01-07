@@ -21,12 +21,28 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/css/animate.css",
+              "src/css/bootstrap.min.css",
+              "src/css/course-form.css",
+              "src/css/et-line-icon.css",
+              "src/css/font-awesome.min.css",
+              "src/css/ionicons.min.css",
+              "src/css/magnific-popup.css",
+              "src/css/material-design-iconic-font.min.css",
+              "src/css/meanmenu.css",
+              "src/css/owl.carousel.min.css",
+              "src/css/reset.css",
+              "src/css/responsive.css",
+              "src/css/style.css"
             ],
-            "scripts": []
+            "scripts": [
+              
+            ]
           },
           "configurations": {
             "production": {

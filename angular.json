@@ -24,13 +24,13 @@
               "src/assets"
             ],
             "styles": [  
-              "src/styles.css",  
-              "./node_modules/owl.carousel/dist/assets/owl.carousel.min.css",  
-               "./node_modules/owl.carousel/dist/assets/owl.theme.default.min.css"  
+              "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.carousel.min.css",
+              "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css",
+              "src/styles.css"
             ],  
- "scripts": ["./node_modules/jquery/dist/jquery.min.js",  
+            "scripts": ["./node_modules/jquery/dist/jquery.min.js",  
               "./node_modules/owl.carousel/dist/owl.carousel.min.js"]  
-          },
+            },
           "configurations": {
             "production": {
               "fileReplacements": [

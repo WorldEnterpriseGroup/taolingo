@@ -3,7 +3,9 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { OwlModule } from 'ngx-owl-carousel';  
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AboutComponent } from './about/about.component';
 import { AdvancedComponent } from './advanced/advanced.component';
@@ -36,6 +38,8 @@ import { IndexFourComponent } from './index-four/index-four.component';
 import { IndexFiveComponent } from './index-five/index-five.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+
+
 
 @NgModule({
   declarations: [
@@ -74,7 +78,10 @@ import { FooterComponent } from './footer/footer.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,OwlModule
+    AppRoutingModule,
+    CarouselModule,
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

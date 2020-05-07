@@ -50,7 +50,7 @@ const routes: Routes = [{
 { path: 'event-right-side-bar',component: EventRightSideBarComponent},
 { path: 'form',component: FormComponent},
 { path: 'form1',component: Form1Component},
-{ path: 'forformtrym1',component: FormtryComponent},
+{ path: 'formtry',component: FormtryComponent},
 { path: 'index',component: IndexComponent},
 { path: 'intermediate',component: IntermediateComponent},
 { path: 'journal',component: JournalComponent},

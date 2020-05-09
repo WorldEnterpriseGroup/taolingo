@@ -116,6 +116,10 @@ export class FormtryComponent implements OnInit {
     // document.getElementById('monthlyPlanTotal').innerHTML = "$" + monthlyPlanTotal;
     this.formData.priceTotal = courseTotalPrice.toString();
     this.formData.monthlyPlanTotal = monthlyPlanTotal.toString();
+    this.multiStepForm.patchValue({
+      priceTotal: courseTotalPrice.toString(),
+      monthlyPlanTotal: monthlyPlanTotal.toString()
+    })
     console.log("Lesson Total " + lessonTotal);
     console.log("Course Total " + courseTotal);
 

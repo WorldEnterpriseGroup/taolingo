@@ -67,6 +67,7 @@ const routes: Routes = [{
 { path: 'index-five',component: IndexFiveComponent},
 { path: 'header',component: HeaderComponent},
 {path:'',redirectTo:'index',pathMatch:'full'},
+{path:'**',redirectTo:'index',},
 
 ];
 

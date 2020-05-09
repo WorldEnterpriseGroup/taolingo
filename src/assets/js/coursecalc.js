@@ -15,7 +15,7 @@ function coursecalc()
     var discount = Number(0);
     var regfee = Number(500);
     // var couponcode = document.getElementById('couponcode').value;
-    
+
     // APPLY DISCOUNT FOR MULTIPLE STUDENTS
     if (students == '1') {
         studentCost = 1;
@@ -57,7 +57,7 @@ function coursecalc()
         levelCost = 180;
         courseCost = Number(2129);
     }
-    
+
     // 52/48 is 52 weeks actual and 48 counted in our form which equates around 4.33.
     // Use this to find total number of coachings requested.
     var lessonTotal = lessons * 52/48*4 * levelCost * monthCost * studentCost;
@@ -69,10 +69,10 @@ function coursecalc()
     } else {
         var paymentplan = courseTotalPrice / months * 1.2;
     }
-        
+
     courseTotalPrice = courseTotalPrice.toFixed(0);
     monthlyPlanTotal = paymentplan.toFixed(0);
-    
+
     document.getElementById('priceTotal').innerHTML = "$" +courseTotalPrice;
     document.getElementById('monthlyPlanTotal').innerHTML = "$" +monthlyPlanTotal;
 
@@ -93,7 +93,7 @@ angular.module('formApp', [
   $scope.formValidation = false;
   $scope.toggleJSONView = false;
   $scope.toggleFormErrorsView = false;
-  
+
   $scope.formParams = {
     payneeded: 'yes',
     _gotcha: '',
@@ -112,14 +112,14 @@ angular.module('formApp', [
     priceTotal: '24064',
     message: ''
   };
-  
+
   // Navigation functions
   $scope.next = function (stage) {
     //$scope.direction = 1;
     //$scope.stage = stage;
-    
+
     $scope.formValidation = true;
-    
+
     if ($scope.multiStepForm.$valid) {
       $scope.direction = 1;
       $scope.stage = stage;
@@ -131,8 +131,8 @@ angular.module('formApp', [
     $scope.direction = 0;
     $scope.stage = stage;
   };
-  
-  
+
+
   // Post to desired exposed web service.
   $scope.submitForm = function () {
     var wsUrl = "https://prod-20.eastus.logic.azure.com:443/workflows/a8bed9230a7445338ffbbecaa103ec67/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=tz8jPn70VwbD7XM6aZw6T2gNB_sxAutBWp5I-hKv6cA";
@@ -152,6 +152,7 @@ angular.module('formApp', [
       $scope.formParams.interest = $scope.formParams.current_level;
       $scope.formParams.time = $scope.formParams.months+ " Months ";
 
+
       $http({
         method: 'POST',
         url: wsUrl,
@@ -164,7 +165,7 @@ angular.module('formApp', [
         // responseconsole.log(JSON.stringify(result))
         console.log('Response' +JSON.stringify(response));
         console.log('Response Status = ' +response.status);
-        
+
         if (response.status == "200") {
           $scope.fullqrcode = response.data.full;
           $scope.monthlyqrcode = response.data.monthly;
@@ -183,7 +184,7 @@ angular.module('formApp', [
         $scope.stage = "error";
     }
   };
-  
+
   $scope.reset = function() {
     // Clean up scope before destorying
     $scope.formParams = {};

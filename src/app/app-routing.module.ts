@@ -35,7 +35,7 @@ import { HeaderComponent } from './header/header.component';
 
 const routes: Routes = [{
   path: 'about',component: AboutComponent,
-  
+
 },
 { path: 'advanced',component: AdvancedComponent},
 { path: 'beginner',component: BeginnerComponent},
@@ -74,7 +74,7 @@ const routes: Routes = [{
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { 
+export class AppRoutingModule {
 
-  
+
 }

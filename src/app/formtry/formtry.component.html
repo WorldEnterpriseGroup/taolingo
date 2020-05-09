@@ -52,16 +52,16 @@
                             </ul>
                             <div class="search">
                                 <div class="search-form">
-                                    <img src="/assets/img/qrcode_tli.jpg">                          
+                                    <img src="/assets/img/qrcode_tli.jpg">
                                 </div>
                             </div>
-                        </div>	
+                        </div>
                         <!--End of Search Form-->
                         <!-- Main Menu End -->
                     </div>
                 </div>
                 <div class="col-xs-12">
-                    <div class="mobile-menu hidden-lg hidden-md hidden-sm"></div> 
+                    <div class="mobile-menu hidden-lg hidden-md hidden-sm"></div>
                 </div>
             </div>
         </div>
@@ -70,20 +70,20 @@
 <!-- Header Area End -->
 <!-- Banner Area Start -->
 <div class="banner-area-wrapper">
-    <div class="banner-area text-center">	
+    <div class="banner-area text-center">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
                     <div class="banner-content-wrapper">
                         <div class="banner-content">
-                            <h2>Beginner English</h2> 
-                        </div> 
+                            <h2>Beginner English</h2>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>    
+</div>
 <!-- Banner Area End -->
 <!-- Blog Start -->
 <div class="courses-details-area blog-area pt-150 pb-140">
@@ -113,24 +113,24 @@
                             </div>
                         </div>
                         <div id="courseconfig" class="course-details-right">
-                            <main ng-app="formApp" ng-controller="formCtrl" ng-cloak>
-                                <form name="multiStepForm" class="form-validation course-form" role="form" ng-submit="submitForm()" novalidate>
-                                    
+                            <main >
+                                <form [formGroup]="multiStepForm" name="multiStepForm" class="form-validation course-form" role="form" (submit)="submitForm()" novalidate>
+
                                 <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
-                                <input type="text" name="_gotcha" style="display:none" ng-model="formParams._gotcha" />
-                                <input type="hidden" name="website" value="Tao Lingo" ng-model="formParams.website" />
+                                <input type="text" name="_gotcha" formControlName="_gotcha" style="display:none" [ngModel]="formParams._gotcha" />
+                                <input type="hidden" name="website" value="Tao Lingo" formControlName="website" [ngModel]="formParams.website" />
                                 <input type="hidden" name="test" value="off" ng-model="formParams.test">
                                 <input type="hidden" name="owner" value="76986198-30f2-e911-a972-000d3a34e213" ng-model="formParams.owner">
-
-                                <div class="animate-switch-container" ng-switch on="stage" ng-class="{forward: direction, backward:!direction}">
-                                    <div class="animate-switch" ng-switch-default>
+                                <div >
+                                <div [ngSwitch]="stage"  class="animate-switch-container"  ng-class="{forward: direction, backward:!direction}">
+                                    <div class="animate-switch"  *ngSwitchCase="'stage'">
                                     <div class="row">
                                         <div class="col-md-12">
                                                 <h3 class="text-center">COURSE SIGN UP</h3>
                                                 <p class="text-center">Step 1 of 2</p>
                                             <ul>
-                                                <li>Students <span><select id="students" name="students" ng-model="formParams.students"
-                                                    onchange="coursecalc()" class="text-center" class="course-form">
+                                                <li>Students <span><select formControlName="students" id="students" name="students" ng-model="formParams.students"
+                                                    (change)="coursecalc()" class="text-center" class="course-form">
                                                     <option value="1" selected="selected">One</option>
                                                     <option value="2">Two</option>
                                                     <option value="3">Three</option>
@@ -141,16 +141,16 @@
                                                     <option value="50">Fifty</option>
                                                     </select>
                                                 </span></li>
-                                                <li>Duration <span><select id="months" class="course-form" name="months" ng-model="formParams.months"
-                                                    onchange="coursecalc()">
+                                                <li>Duration <span><select formControlName="months" id="months" class="course-form" name="months" ng-model="formParams.months"
+                                                     (change)="coursecalc()">
                                                     <option value="1">1 Month</option>
                                                     <option value="6">1 Semester</option>
                                                     <option value="12" selected="selected">1 Year</option>
                                                     <option value="24">2 Years</option>
                                                     <option value="48">4 Years</option>
                                                     </select></span></li>
-                                                <li>Lessons <span><select id="lessons" class="course-form" name="lessons" ng-model="formParams.lessons"
-                                                    onchange="coursecalc()">
+                                                <li>Lessons <span><select formControlName="lessons" id="lessons" class="course-form" name="lessons" ng-model="formParams.lessons"
+                                                    (change)="coursecalc()">
                                                     <option value="0">None</option>
                                                     <option value="1">1 Per Week</option>
                                                     <option value="2">2 Per Week</option>
@@ -163,66 +163,66 @@
                                                     <option value="9">9 Per Week</option>
                                                     <option value="10">10 Per Week</option>
                                                     </select></span></li>
-                                                <li>Course <span><select id="current_level" class="course-form" name="current_level" ng-model="formParams.current_level"
-                                                    onchange="coursecalc()">
+                                                <li>Course <span><select formControlName="current_level" id="current_level" class="course-form" name="current_level" ng-model="formParams.current_level"
+                                                    (change)="coursecalc()">
                                                     <option value="Beginner" selected="selected">Beginner</option>
                                                     <option value="Social">Social</option>
                                                     <option value="Business">Business</option>
                                                     </select></span></li>
-                                                <li>Monthly Price <span><div id="monthlyPlanTotal" name="monthlyPlanTotal" ng-model="formParams.monthlyPlanTotal">${{formParams.monthlyPlanTotal}}</div></span></li>
-                                                <li>Total Price <span><div id="priceTotal" name="priceTotal"  ng-model="formParams.priceTotal">${{formParams.priceTotal}}</div></span></li>
+                                                <li>Monthly Price <span><div id="monthlyPlanTotal" name="monthlyPlanTotal" ng-model="formParams.monthlyPlanTotal">${{formData.monthlyPlanTotal}}</div></span></li>
+                                                <li>Total Price <span><div id="priceTotal" name="priceTotal"  ng-model="formParams.priceTotal">${{formData.priceTotal}}</div></span></li>
                                             </ul>
                                             <div class="text-center">
-                                                <button type="button" class="btn default-btn" ng-click="next('stage1')">Next</button>
+                                                <button type="button" class="btn default-btn" (click)="next('stage1')">Next</button>
                                             </div>
                                         </div>
                                     </div>
                                     </div>
-                                    <div class="animate-switch" ng-switch-when="stage1">
+                                    <div class="animate-switch" *ngSwitchCase="'stage1'">
                                     <div class="col-md-12">
                                             <h3 class="text-center">COURSE SIGN UP</h3>
                                             <p class="text-center">Step 2 of 2</p>
                                         <ul>
                                             <li>
-                                                <input type="text" class="form-control course-form" id="tb-fisrtname" name="fisrtname" ng-maxlength="250" ng-model="formParams.firstname" required ng-class="{'input-error': formValidation && multiStepForm.firstname.$error.required}" placeholder="First Name">
-                                                <span ng-show="multiStepForm.firstname.$error.maxlength">
+                                                <input type="text" formControlName="firstname" class="form-control course-form" id="tb-fisrtname" name="fisrtname" ng-maxlength="250" ng-model="formParams.firstname" required ng-class="{'input-error': formValidation && multiStepForm.firstname.$error.required}" placeholder="First Name">
+                                                <span *ngIf="multiStepForm.controls['firstname'].hasError('maxlength')">
                                                     Limit Reached
                                                 </span>
                                             </li>
                                             <li>
-                                                <input type="text" class="form-control course-form" id="tb-lastname" name="lastname" ng-maxlength="250" ng-model="formParams.lastname" ng-class="{'input-error': formValidation && multiStepForm.lastname.$error.required}" required placeholder="Last Name">
-                                                <span ng-show="multiStepForm.lastname.$error.maxlength">
-                                                    Limit Reached 
+                                                <input type="text" formControlName="lastname" class="form-control course-form" id="tb-lastname" name="lastname" ng-maxlength="250" ng-model="formParams.lastname" ng-class="{'input-error': formValidation && multiStepForm.lastname.$error.required}" required placeholder="Last Name">
+                                                <span *ngIf="multiStepForm.controls['lastname'].hasError('maxlength')">
+                                                    Limit Reached
                                                 </span>
                                             </li>
                                             <li>
-                                                <input type="email" class="form-control course-form" id="tb-email" name="email" ng-maxlength="100" ng-model="formParams.email" ng-class="{'input-error': formValidation && multiStepForm.email.$error.required}" ng-model-options="{ updateOn: 'blur' }" required placeholder="Email Address">
-                                                <span class="text-center red" style="color: red" ng-show="multiStepForm.email.$error.email" role="alert">
+                                                <input type="email" formControlName="email" class="form-control course-form" id="tb-email" name="email" ng-maxlength="100" ng-model="formParams.email" ng-class="{'input-error': formValidation && multiStepForm.email.$error.required}" ng-model-options="{ updateOn: 'blur' }" required placeholder="Email Address">
+                                                <span class="text-center red" style="color: red" *ngIf="multiStepForm.controls['email'].hasError('email')" role="alert">
                                                 Wrong Format
                                                 </span>
-                                                <span ng-show="multiStepForm.email.$error.maxlength">
+                                                <span *ngIf="multiStepForm.controls['email'].hasError('maxlength')">
                                                 Too Long. Try Again.
                                                 </span>
                                             </li>
-                                            <li><input type="tel" class="form-control course-form" id="tb-tel" name="tel" ng-maxlength="20" ngModel="formParams.tel" required ng-class="{'input-error': formValidation && multiStepForm.tel.$error.required}" placeholder="Phone Number">
-                                                <span ng-show="multiStepForm.tel.$error.maxlength" style="color: red">
+                                            <li><input type="tel" class="form-control course-form" id="tb-tel" name="tel" formControlName="tel" required ng-class="{'input-error': formValidation && multiStepForm.tel.$error.required}" placeholder="Phone Number">
+                                                <span *ngIf="multiStepForm.controls['tel'].hasError('maxlength')" style="color: red">
                                                     Limit Reached
                                                 </span>
                                             </li>
                                             <li>
-                                                <input type="text" class="form-control course-form" id="tb-partner" name="partner" ng-maxlength="250" ng-model="formParams.partner" ng-class="{'input-error': formValidation && multiStepForm.partner.$error.required}" placeholder="Referred by: (Optional)">
-                                                <span ng-show="multiStepForm.partner.$error.maxlength" style="color: red">
+                                                <input type="text" class="form-control course-form" id="tb-partner" name="partner" formControlName="partner" ng-maxlength="250" ng-model="formParams.partner" ng-class="{'input-error': formValidation && multiStepForm.partner.$error.required}" placeholder="Referred by: (Optional)">
+                                                <span *ngIf="multiStepForm.controls['partner'].hasError('maxlength')" style="color: red">
                                                     Limit Reached
                                                 </span>
                                             </li>
                                         </ul>
                                     </div>
                                     <div class="text-center">
-                                    <button type="button" class="btn black-btn" ng-click="back('')">Back</button>
+                                    <button type="button" class="btn black-btn" (click)="back('stage')" style="right: 5px;">Back</button>
                                     <button type="submit" class="btn default-btn" >Send</button>
                                     </div>
                                     </div>
-                                    <div class="animate-switch" ng-switch-when="stage2">
+                                    <div class="animate-switch" *ngSwitchCase="'stage2'">
                                     <div class="form-group">
                                         <label for="ta-body">Message Body:</label>
                                         <textarea class="form-control" rows="5" id="ta-body" ng-model="formParams.messageBody"></textarea>
@@ -230,7 +230,7 @@
                                     <button type="button" class="btn btn-info" ng-click="back('stage1')">Back</button>
                                     <button type="button" class="btn btn-primary" ng-click="next('stage3')">Next</button>
                                     </div>
-                                    <div class="animate-switch" ng-switch-when="stage3">
+                                    <div class="animate-switch" *ngSwitchCase="'stage3'">
                                     <h3>Summary</h3>
                                     <p>First name: {{formParams.firstName}}</p>
                                     <p>Last name: {{formParams.lastName}}</p>
@@ -239,37 +239,38 @@
                                     <button type="button" class="btn btn-info" ng-click="back('stage2')">Back</button>
                                     <button type="button" class="btn btn-warning" ng-click="submitForm()">Submit</button>
                                     </div>
-                                    <div class="animate-switch" ng-switch-when="fullpayment">
+                                    <div class="animate-switch" *ngSwitchCase="'fullpayment'">
                                     <div class="success-wrap">
                                         <div class="text-center">
-                                            <h5>Pay Full Amount: ${{formParams.budget}}</h5>
+                                            <h5>Pay Full Amount: ${{this.multiStepForm.controls['budget'].value}}</h5>
                                             <img style="-webkit-user-select: none;margin: auto;" src="{{fullqrcode}}">
                                             <img src="/assets/img/icon/chinesepay.png">
-                                            <div><button type="button" class="btn btn-success" ng-click="next('monthlypayment')" >See Monthly Payment</button></div>
+                                            <div><button type="button" class="btn btn-success" (click)="next('monthlypayment')" >See Monthly Payment</button></div>
                                         </div>
                                     </div>
                                     </div>
-                                    <div class="animate-switch" ng-switch-when="monthlypayment">
+                                    <div class="animate-switch" *ngSwitchCase="'monthlypayment'">
                                         <div class="success-wrap">
                                             <div class="text-center">
-                                                <h5>Pay Monthly: ${{formParams.monthlybudget}}</h5>
+                                                <h5>Pay Monthly: ${{this.multiStepForm.controls['monthlybudget'].value}}</h5>
                                                 <img style="-webkit-user-select: none;margin: auto;" src="{{monthlyqrcode}}">
                                                 <img src="/assets/img/icon/chinesepay.png">
-                                                <div><button type="button" class="btn btn-success" ng-click="back('fullpayment')" >See Full Payment</button></div>
+                                                <div><button type="button" class="btn btn-success" (click)="back('fullpayment')" >See Full Payment</button></div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="animate-switch" ng-switch-when="error" >
+                                    <div class="animate-switch" *ngSwitchCase="'error'" >
                                     <div class="error-wrap text-center">
                                         <h2 class="confirmation-text">Error</h2>
                                         <p>There was an error when attempting to submit your request.<br>Please try again later.</p>
-                                        <div><button type="button" class="btn btn-danger" ng-click="back('stage1')" >Try again</button></div>
+                                        <div><button type="button" class="btn btn-danger" (click)="back('stage1')" >Try again</button></div>
                                         <div class="pt-100">
                                             <h4><a href="mailto@info@taolingo.com">Email us</a> if you have trouble <br><br>or<br><br> Call <strong>929-229-2918</strong></h4>
                                         </div>
                                     </div>
                                     </div>
                                 </div>
+                              </div>
                                 </form>
                             </main>
                         </div>
@@ -309,18 +310,18 @@
                     <div class="single-blog-widget mb-50">
                         <h3>categories</h3>
                         <ul>
-                            <li><a href="#">CSS Engineering (10)</a></li>
-                            <li><a href="#">Political Science (12)</a></li>
-                            <li><a href="#">Micro Biology (08)</a></li>
-                            <li><a href="#">HTML5 &amp; CSS3 (15)</a></li>
-                            <li><a href="#">Web Design (20)</a></li>
-                            <li><a href="#">PHP (23)</a></li>
+                            <li><a routerLink="#" >CSS Engineering (10)</a></li>
+                            <li><a routerLink="#">Political Science (12)</a></li>
+                            <li><a routerLink="#">Micro Biology (08)</a></li>
+                            <li><a routerLink="#">HTML5 &amp; CSS3 (15)</a></li>
+                            <li><a routerLink="#">Web Design (20)</a></li>
+                            <li><a routerLink="#">PHP (23)</a></li>
                         </ul>
                     </div>
                     <div class="single-blog-widget mb-50">
                         <div class="single-blog-banner">
                             <a routerLink="/blog-details" id="blog"><img src="/assets/img/blog/blog-img.jpg" alt="blog"></a>
-                            <h2>best<br> eductaion<br> theme</h2> 
+                            <h2>best<br> eductaion<br> theme</h2>
                         </div>
                     </div>
                     <div class="single-blog-widget mb-50">
@@ -398,13 +399,13 @@
                     <p>Excellent education tips and news for American-Style English</p>
                 </div>
                 <div class="newsletter-form mc_embed_signup">
-                    <form action="https://taolearning.us3.list-manage.com/subscribe/post?u=b9ba2bf94a52e703daf076861&amp;id=cb8a7b1c52" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                        <div id="mc_embed_signup_scroll" class="mc-form"> 
+                    <form  action="https://taolearning.us3.list-manage.com/subscribe/post?u=b9ba2bf94a52e703daf076861&amp;id=cb8a7b1c52" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                        <div id="mc_embed_signup_scroll" class="mc-form">
                             <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter Your Email Address" required>
                             <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
                             <div class="mc-news" aria-hidden="true"><input type="text" name="b_b9ba2bf94a52e703daf076861_cb8a7b1c52" tabindex="-1" value=""></div>
-                            <button id="mc-embedded-subscribe" class="default-btn" type="submit" name="subscribe"><span>Subscribe</span></button> 
-                        </div>    
+                            <button id="mc-embedded-subscribe" class="default-btn" type="submit" name="subscribe" onclick="submit()"><span>Subscribe</span></button>
+                        </div>
                     </form>
                     <!-- mailchimp-alerts Start -->
                     <div class="mailchimp-alerts">
@@ -439,7 +440,7 @@
                                 <li><a href="https://www.pinterest.com/devitemsllc/"><i class="zmdi zmdi-pinterest"></i></a></li>
                                 <li><a href="#"><i class="zmdi zmdi-vimeo"></i></a></li>
                                 <li><a href="https://twitter.com/devitemsllc"><i class="zmdi zmdi-twitter"></i></a></li>
-                            </ul>    
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -477,15 +478,15 @@
                 </div>
             </div>
         </div>
-    </div>   
+    </div>
     <div class="footer-bottom text-center">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
                     <p>Copyright © <a href="https://taofruit.com/" target="_blank">Tao Fruit</a> 2019. All Right Reserved By Tao Fruit.</p>
-                </div> 
+                </div>
             </div>
-        </div>    
+        </div>
     </div>
 </footer>
 <!-- Footer End -->
@@ -495,3 +496,4 @@
         </div>
     </div>
 </div>
+

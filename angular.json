@@ -122,6 +122,14 @@
               "devServerTarget": "new1:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "cname": "taolingo.com",
+            "branch": "gh-pages",
+            "message": "Angular 9 App Deployment"
+          }
         }
       }
     }

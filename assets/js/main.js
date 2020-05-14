@@ -1,28 +1,28 @@
 (function ($) {
-"use strict";  
-    
+"use strict";
+
 /*------------------------------------
-	Sticky Menu 
+	Sticky Menu
 --------------------------------------*/
  var windows = $(window);
     var stick = $(".header-sticky");
-	windows.on('scroll',function() {    
+	windows.on('scroll',function() {
 		var scroll = windows.scrollTop();
 		if (scroll < 5) {
 			stick.removeClass("sticky");
 		}else{
 			stick.addClass("sticky");
 		}
-	});  
+	});
 /*------------------------------------
-	jQuery MeanMenu 
+	jQuery MeanMenu
 --------------------------------------*/
 	$('.main-menu nav').meanmenu({
 		meanScreenWidth: "767",
 		meanMenuContainer: '.mobile-menu'
 	});
-    
-    
+
+
     /* last  2 li child add class */
     $('ul.menu>li').slice(-2).addClass('last-elements');
 /*------------------------------------
@@ -63,7 +63,7 @@
                 items:5
             }
         }
-    });  
+    });
 
     $('.testimonial-owl').owlCarousel({
         loop:true,
@@ -93,13 +93,13 @@
             enabled: true,
         }
     });
-    
+
     $('.image-popup').magnificPopup({
         type: 'image',
         gallery:{
             enabled:true
         }
-    }); 
+    });
 /*----------------------------
     Wow js active
 ------------------------------ */
@@ -116,15 +116,15 @@
 /*------------------------------------
 	Nicescroll
 --------------------------------------*/
-     $('body').scrollspy({ 
+     $('body').scrollspy({
             target: '.navbar-collapse',
             offset: 95
         });
-$(".notice-left").niceScroll({
+    $(".notice-left").niceScroll({
             cursorcolor: "#EC1C23",
             cursorborder: "0px solid #fff",
             autohidemode: false,
-            
+
         });
 
-})(jQuery);	
+})(jQuery);

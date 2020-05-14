@@ -8,10 +8,10 @@
     Version: 1.0
 
 -----------------------------------------------------------------------------------
-    
+
     CSS INDEX
     ===================
-	
+
     1. Default CSS
     2. Header CSS
     3. Slider CSS
@@ -36,7 +36,7 @@
 /*----------------------------------------*/
 /*  1. Default CSS
 /*----------------------------------------*/
-@import "course-form.css";
+/* @import "course-form.css"; */
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800');
 body {
 	color: #606060;
@@ -44,7 +44,7 @@ body {
 	font-style: normal;
 	font-weight: 400;
 	line-height: normal;
-    font-family: 'Open Sans', sans-serif; 
+    font-family: 'Open Sans', sans-serif;
 }
 .clear{clear:both}
 .fix {overflow: hidden}
@@ -488,7 +488,7 @@ textarea {
 .pl-140 { padding-left: 140px }
 .pl-150 { padding-left: 150px }
 /***************************
-    Page section padding 
+    Page section padding
 ****************************/
 .ptb-0 { padding: 0 }
 .ptb-10 { padding: 10px 0 }
@@ -508,7 +508,7 @@ textarea {
 .ptb-140 { padding: 140px 0 }
 .ptb-150 { padding: 150px 0 }
 /***************************
-    Page section margin 
+    Page section margin
 ****************************/
 .mtb-0 { margin: 0 }
 .mtb-10 { margin: 10px 0 }
@@ -637,7 +637,7 @@ textarea {
 }
 .main-menu ul li:hover > ul {
     opacity: 1;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; 
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
     visibility: visible;
 }
 .main-menu ul li ul li {
@@ -887,7 +887,7 @@ textarea {
     padding: 0 40px 0 10px;
     width: 100%;
 }
-#search-form > input::-moz-placeholder {color: #252525;} 
+#search-form > input::-moz-placeholder {color: #252525;}
 #search-form > input::-webkit-input-placeholder {color: #252525;}
 #search-form > button {
   background: #2C2B5E none repeat scroll 0 0;
@@ -994,7 +994,7 @@ textarea {
 /*----------------------------------------*/
 /*  3. Slider CSS
 /*----------------------------------------*/
-.slider-area, .single-banner {position: relative; overflow: hidden} 
+.slider-area, .single-banner {position: relative; overflow: hidden}
 .single-slide:after, .banner-area:after{
     position: absolute;
     left: 0;
@@ -1127,8 +1127,8 @@ textarea {
 }
 .slider-area .owl-item.active .slide-content h3 {-webkit-animation-delay: 500ms;animation-delay: 500ms}
 .slider-area .owl-item.active .slide-content h2 {-webkit-animation-delay: 750ms;animation-delay: 750ms}
-.slider-area .owl-item.active .slide-content p {-webkit-animation-delay: 1100ms;animation-delay: 1100ms}    
-.slider-area .owl-item.active .slide-content .banner-btn {-webkit-animation-delay: 1700ms;animation-delay: 1700ms}      
+.slider-area .owl-item.active .slide-content p {-webkit-animation-delay: 1100ms;animation-delay: 1100ms}
+.slider-area .owl-item.active .slide-content .banner-btn {-webkit-animation-delay: 1700ms;animation-delay: 1700ms}
 .owl-nav div {
     background: rgba(236, 28, 35, 0.64);
     color: #ddd;
@@ -1216,7 +1216,7 @@ textarea {
     color: #2c2b5e;
     text-transform: uppercase;
     margin-bottom: 15.5px;
-    font-size: 700; 
+    font-size: 700;
 }
 .video-icon a i{
     font-size: 38px;
@@ -1338,7 +1338,7 @@ textarea {
 .course-content{
     padding: 22px 30px 25px;
     text-align: left;
-    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.15); 
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.15);
 }
 .course-img img {
     width: 100%;
@@ -1699,7 +1699,7 @@ textarea {
     text-transform: uppercase;
     -webkit-transition: all 0.5s ease 0s;
     -o-transition: all 0.5s ease 0s;
-    transition: all 0.5s ease 0s;  
+    transition: all 0.5s ease 0s;
 }
 .event-area.three .event-content h4:hover a{color: #EC1C23}
 .event-area.three .event-content{
@@ -1745,7 +1745,7 @@ textarea {
 }
 .event-details-content ul{margin-bottom: 28px}
 .event-details-content ul li{
-    display: inline-block; 
+    display: inline-block;
     margin-right: 15px;
     color: #606060;
     font-size: 14px;
@@ -1851,7 +1851,7 @@ textarea {
     margin-bottom: 4px;
 }
 .testimonial-owl .owl-nav{display: none}
-/*----------------------------------------*/ 
+/*----------------------------------------*/
 /*  9. Blog CSS
 /*----------------------------------------*/
 .single-blog{box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.15)}
@@ -2070,13 +2070,13 @@ textarea {
     margin-bottom: 0px;
 }
 .single-tag a{
-    float: left; 
+    float: left;
     text-transform: capitalize;
     border: 1px solid #E1E1E1;
     padding: 6px 14px;
     font-size: 14px;
     font-weight: 300;
-    font-family: 'Open Sans', sans-serif; 
+    font-family: 'Open Sans', sans-serif;
     display: block;
     color: #606060;
     -webkit-transition: all 0.5s ease 0s;
@@ -2107,13 +2107,13 @@ textarea {
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
     color: #606060;
-    margin-bottom: 25px; 
+    margin-bottom: 25px;
 }
 .blog-details-content p.quote{
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     color: #606060;
-    margin-bottom: 25px; 
+    margin-bottom: 25px;
     font-style: italic;
     line-height: 25px;
     margin-top: 35px;
@@ -2165,7 +2165,7 @@ textarea {
     -o-transition: all 0.5s ease 0s;
     transition: all 0.5s ease 0s;
 }
-/*----------------------------------------*/ 
+/*----------------------------------------*/
 /*  10. Subscribe CSS
 /*----------------------------------------*/
 .subscribe-area{background: #FAFAFA}
@@ -2201,7 +2201,7 @@ textarea {
     left: -5000px;
     position: absolute;
 }
-/*----------------------------------------*/ 
+/*----------------------------------------*/
 /*  11. Scrollup CSS
 /*----------------------------------------*/
 #scrollUp {
@@ -2278,7 +2278,7 @@ textarea {
 #scrollUp {
     background: #EC1C23 none repeat scroll 0 0;
 }
-/*----------------------------------------*/ 
+/*----------------------------------------*/
 /*  12. Footer CSS
 /*----------------------------------------*/
 .main-footer {
@@ -2327,10 +2327,10 @@ textarea {
 .single-widget ul{margin-top: 25px}
 .footer-social ul li {
     display: inline-block;
-    margin-right: 13px; 
+    margin-right: 13px;
 }
 .footer-social ul li:last-child {
-    margin-right: 0px; 
+    margin-right: 0px;
 }
 .single-widget ul li {
     color: #7d7d7d;
@@ -2434,12 +2434,12 @@ textarea {
     opacity: 0;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); 
+    transform: translate(-50%, -50%);
     -webkit-transition: all 0.5s ease 0s;
     -o-transition: all 0.5s ease 0s;
     transition: all 0.5s ease 0s;
 }
-/*----------------------------------------*/ 
+/*----------------------------------------*/
 /*  13. Service CSS
 /*----------------------------------------*/
 .single-service{padding: 40px 40px; box-shadow: 0 0 4px 0 #ddd;}
@@ -2456,7 +2456,7 @@ textarea {
     font-family: 'Open Sans', sans-serif;
     margin-bottom: 0px;
 }
-/*----------------------------------------*/ 
+/*----------------------------------------*/
 /*  14. About CSS
 /*----------------------------------------*/
 .about-content h2{
@@ -2486,10 +2486,10 @@ textarea {
 }
 .about-content a:hover{
     color: #fff;
-    background: #2C2B5E;  
+    background: #2C2B5E;
 }
 .about-img{
-    position: relative; 
+    position: relative;
     z-index: 1;
     margin-right: -30px;
     padding: 0 20px;
@@ -2504,7 +2504,7 @@ textarea {
     height: 88%;
     z-index: -1;
 }
-/*----------------------------------------*/ 
+/*----------------------------------------*/
 /*  15. Teacher CSS
 /*----------------------------------------*/
 .single-teacher{
@@ -2516,7 +2516,7 @@ textarea {
     line-height: 0;
     padding-bottom: 91px;
 }
-.single-teacher-img a{ 
+.single-teacher-img a{
     position: relative;
     display: block;
 }
@@ -2588,7 +2588,7 @@ textarea {
 .pagination ul{margin-top: 24px}
 .pagination ul li{display: inline-block; margin-right: 12px}
 .pagination ul li:last-child{margin-right: 0px}
-.pagination ul li a{    
+.pagination ul li a{
     font-size: 18px;
     font-weight: 600;
     font-family: 'Open Sans', sans-serif;
@@ -2596,17 +2596,17 @@ textarea {
     background: #fff;
     text-align: center;
     line-height: 36px;
-    height: 38px; 
+    height: 38px;
     width: 38px;
-    display: block; 
+    display: block;
     border: 1px solid #EBEBEB;
     -webkit-transition: all 0.5s ease 0s;
     -o-transition: all 0.5s ease 0s;
     transition: all 0.5s ease 0s;
 }
-.pagination ul li:hover a{    
+.pagination ul li:hover a{
     color: #fff;
-    background: #2C2B5E;  
+    background: #2C2B5E;
 }
 .teacher-details-content{margin-top: 26px}
 .teacher-details-content h2 {
@@ -2672,7 +2672,7 @@ textarea {
     font-weight: 600;
     color: #606060;
     display: inline-block;
-    margin-right: 5px; 
+    margin-right: 5px;
 }
 .teacher-contact ul li a i{
     font-size: 15px;
@@ -2741,11 +2741,11 @@ textarea {
     right: 0;
     width: 0;
 }
-/*----------------------------------------*/ 
+/*----------------------------------------*/
 /*  16. Contact CSS
 /*----------------------------------------*/
 .contact-contents{
-    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.13); 
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.13);
     padding: 55px 0;
     margin-right: 65px;
 }
@@ -2867,7 +2867,7 @@ textarea {
 }
 
 
-/* KRASHNIK */ 
+/* KRASHNIK */
 object{
 	pointer-events: none;
 }

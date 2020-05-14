@@ -1,11 +1,40 @@
 import { HttpHeaders, HttpClient, HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { trigger, transition, query, style, animate, group } from '@angular/animations';
+const left = [
+  query(':enter, :leave', style({ position: 'fixed', width: '100%' }), { optional: true }),
+  group([
+    query(':enter', [style({ transform: 'translateX(-100%)' }), animate('.3s ease-out', style({ transform: 'translateX(0%)' }))], {
+      optional: true,
+    }),
+    query(':leave', [style({ transform: 'translateX(0%)' }), animate('.3s ease-out', style({ transform: 'translateX(100%)' }))], {
+      optional: true,
+    }),
+  ]),
+];
 
+const right = [
+  query(':enter, :leave', style({ position: 'fixed', width: '100%' }), { optional: true }),
+  group([
+    query(':enter', [style({ transform: 'translateX(100%)' }), animate('.3s ease-out', style({ transform: 'translateX(0%)' }))], {
+      optional: true,
+    }),
+    query(':leave', [style({ transform: 'translateX(0%)' }), animate('.3s ease-out', style({ transform: 'translateX(-100%)' }))], {
+      optional: true,
+    }),
+  ]),
+];
 @Component({
   selector: 'app-formtry',
   templateUrl: './formtry.component.html',
-  styleUrls: ['./formtry.component.css']
+  styleUrls: ['./formtry.component.css'],
+  animations: [
+    trigger('animImageSlider', [
+      transition(':increment', left),
+      transition(':decrement', right),
+    ]),
+  ]
 })
 export class FormtryComponent implements OnInit {
 
@@ -14,7 +43,7 @@ export class FormtryComponent implements OnInit {
   stage = 'stage';
   fullqrcode = '0';
   monthlyqrcode = '0';
-  direction;
+  direction = 0;
   formValidation = false;
   toggleJSONView = false;
   toggleFormErrorsView =false;
@@ -159,12 +188,12 @@ export class FormtryComponent implements OnInit {
   next(stage1) {
      this.formValidation = true;
      this.stage = stage1;
-     this.direction = 0;
+     this.direction++;
      this.formValidation = false;
   }
   back(stage){
-    this.direction = 0;
-    console.log(this.stage)
+    this.direction--;
+    console.log(this.stage);
     this.stage = stage;
   }
   reset(){
@@ -220,5 +249,6 @@ export class FormtryComponent implements OnInit {
 
 
   }
+
 
 }

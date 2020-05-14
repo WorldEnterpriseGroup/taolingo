@@ -21,7 +21,7 @@
                                     <li><a routerLink="/step">How to Start</a></li>
                                     <li><a routerLink="/about">About</a></li>
                                     <li><a routerLink="/journal">Journal</a></li>
-                                    
+
                                     <li><div class="button-box"><a href="https://login.microsoftonline.com/login.srf?wa=wsignin1.0&whr=taolearning.org&wreply=https%3A%2F%2Ftaolearning.sharepoint.com/sites/taolingo" class="default-btn-white">Login</a></div></li>
                                     <li><div class="button-box"><a routerLink="/signup" class="default-btn-red">&nbsp; Sign Up&nbsp;&nbsp;&nbsp;&nbsp;</a></div></li>
                                 </ul>
@@ -38,34 +38,36 @@
 <!-- Header Area End -->
 <!-- Background Area Start -->
 <section id="slider-container" class="slider-area">
-        <owl-carousel-o [options]="customOptions">
-            <ng-template carouselSlide [width]="2160" [center]="true">
+            <div class="slider-owl owl-theme owl-carousel">
+                <!-- Start Slingle Slide -->
                 <div class="single-slide item" style="background-image: url(/assets/img/slider/slider8b.jpg)">
-                    <div class="slider-content-area">  
+                    <!-- Start Slider Content -->
+                    <div class="slider-content-area">
                         <div class="container">
                             <div class="row">
-                                <div class="col-md-7 col-md-offset-left-5"> 
+                                <div class="col-md-7 col-md-offset-left-5">
                                     <div class="slide-content-wrapper">
                                         <div class="slide-content">
                                             <h3>Have Fun Learning</h3>
                                             <h2>English Online </h2>
                                             <p>Play games, sing songs, and go on learning adventures with our amazing English teachers.</p>
-                                            <a class="default-btn" href="requestmodal.html" data-toggle="modal" data-target="#theModal">One Free Lesson</a>
+                                            <a class="default-btn" href="#" data-toggle="modal" data-target="#exampleModalCenter">One Free Lesson</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <!-- Start Slider Content -->
                 </div>
-            </ng-template>
-            <ng-template carouselSlide [width]="2160" [center]="true">
+                <!-- End Slingle Slide -->
+                <!-- Start Slingle Slide -->
                 <div class="single-slide item" style="background-image: url(/assets/img/slider/slider7.jpg)">
                     <!-- Start Slider Content -->
-                    <div class="slider-content-area">   
+                    <div class="slider-content-area">
                         <div class="container">
                             <div class="row">
-                                <div class="col-md-7 col-md-offset-left-5"> 
+                                <div class="col-md-7 col-md-offset-left-5">
                                     <div class="slide-content-wrapper text-left">
                                         <div class="slide-content">
                                             <h3>Have Fun Learning</h3>
@@ -80,15 +82,15 @@
                     </div>
                     <!-- Start Slider Content -->
                 </div>
-            </ng-template>
-            <ng-template carouselSlide [width]="2160" [center]="true">
+                <!-- End Slingle Slide -->
+                <!-- Start Slingle Slide -->
                 <div class="single-slide item" style="background-image: url(/assets/img/slider/slider6a.jpg)">
                     <!-- Start Slider Content -->
-                    <div class="slider-content-area">   
+                    <div class="slider-content-area">
                         <div class="container">
                             <div class="row">
-                                <div class="col-md-7 col-md-offset-left-5"> 
-                                    <div class="slide-content-wrapper text-left">
+                                <div class="col-md-7 col-md-offset-left-5">
+                                    <div class="slide-content-wrapper">
                                         <div class="slide-content">
                                             <h3>Have Fun Learning</h3>
                                             <h2>English Online </h2>
@@ -102,9 +104,9 @@
                     </div>
                     <!-- Start Slider Content -->
                 </div>
-            </ng-template>
-        </owl-carousel-o>
-</section>
+                <!-- End Slingle Slide -->
+            </div>
+        </section>
 <!-- Background Area End -->
 <!-- Courses Area Start -->
 <div class="courses-area pt-100 pb-150 text-center">
@@ -131,7 +133,7 @@
                         <h3><a routerLink="/beginner">BEGINNER ENGLISH</a></h3>
                         <p>An exciting, simple, and fun new way to learn with a focus on a connected digital world where English is used everywhere. </p>
                         <a class="default-btn" routerLink="/beginner">read more</a>
-                    </div>   
+                    </div>
                 </div>
             </div>
             <div class="col-md-4 col-sm-6 col-xs-12">
@@ -147,7 +149,7 @@
                         <h3><a routerLink="/intermediate">SOCIAL ENGLISH</a></h3>
                         <p>Gain confidence by talking and holding full conversations in English while we teach you the sot skills important in America.</p>
                         <a class="default-btn" routerLink="/intermediate">read more</a>
-                    </div>   
+                    </div>
                 </div>
             </div>
             <div class="col-md-4 hidden-sm col-xs-12">
@@ -163,7 +165,7 @@
                         <h3><a routerLink="/advanced">BUSINESS ENGLISH</a></h3>
                         <p>Master all the supporting attributes to language such as legal communications, advertising, Agile teamwork, and poetic prose.</p>
                         <a class="default-btn" routerLink="/advanced">read more</a>
-                    </div>   
+                    </div>
                 </div>
             </div>
         </div>
@@ -180,7 +182,7 @@
                     <p>Our program was designed by top American teachers to make sure students learn the "lingo" not just the language. All language is art and we make the learning experience fun while also teaching the artistic expression so you sound like a native speaker. We have been teaching for over 20 years and have state of the art partnerships with Microsoft for a great learning experience.  </p>
                     <p class="choose-option">We focus on the key aspects of linguistics to turn you not only into a speaker, but a master poet who has confidence in your communication skills.  </p>
                     <a class="default-btn" routerLink="/method">OUR METHOD</a>
-                </div>  
+                </div>
             </div>
         </div>
     </div>
@@ -202,15 +204,15 @@
                     <div class="single-notice-right mb-25 pb-25">
                         <h3>HAVE FUN WHILE LEARNING</h3>
                         <p>Sing songs, laugh, and play with your teacher online as you build a lasting relationship with a teacher who will help you every step of the way. We trick the brain into learning with our unique style.</p>
-                    </div> 
+                    </div>
                     <div class="single-notice-right mb-25 pb-25">
                         <h3>MICROSOFT EDUCATION PARTNERS</h3>
                         <p>We are partnered with Microsoft for an amazing learning experience. You will receive access to a learning dashboard and interactive environment designed by the largest tech education company in the world. </p>
-                    </div> 
+                    </div>
                     <div class="single-notice-right">
                         <h3>LEARN THE LINGO</h3>
                         <p>Speak just like an American. Learn the exact phrases, responses, and style of language used by American families. You will also learn from the same techniques that are taught by American families to their own children.</p>
-                    </div>   
+                    </div>
                 </div>
             </div>
         </div>
@@ -377,26 +379,22 @@
 <div class="testimonial-area pt-110 pb-105 text-center">
     <div class="container">
         <div class="row">
-            <owl-carousel-o>
-                <ng-template carouselSlide2>
-                    <div class="testimonial-owl owl-theme owl-carousel">
-                        <div class="col-md-8 col-md-offset-2 col-sm-12">
-                            <div class="single-testimonial">
-                                <div class="testimonial-info">
-                                    <div class="testimonial-img">
-                                        <img src="/assets/img/testimonial/testimonial.jpg" alt="testimonial">
-                                    </div>
-                                    <div class="testimonial-content">
-                                        <p>Learn the lingo with our revolutionary langauge training program fun for all ages. Speak like a native as you progress through English literacy. Powered by Tao Learning, a 501c3 Non-Profit.</p>
-                                        <h4>David Morgan</h4>
-                                        <h5>Student, CSE</h5>
-                                    </div>
-                                </div>
+            <div class="testimonial-owl owl-theme owl-carousel">
+                <div class="col-md-8 col-md-offset-2 col-sm-12">
+                    <div class="single-testimonial">
+                        <div class="testimonial-info">
+                            <div class="testimonial-img">
+                                <img src="/assets/img/testimonial/testimonial.jpg" alt="testimonial">
                             </div>
-                        </div> 
+                            <div class="testimonial-content">
+                                <p>Learn the lingo with our revolutionary langauge training program fun for all ages. Speak like a native as you progress through English literacy. Powered by Tao Learning, a 501c3 Non-Profit.</p>
+                                <h4>David Morgan</h4>
+                                <h5>Student, CSE</h5>
+                            </div>
+                        </div>
                     </div>
-                </ng-template>
-            </owl-carousel-o>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -485,12 +483,12 @@
                 </div>
                 <div class="newsletter-form mc_embed_signup">
                     <form action="https://taolearning.us3.list-manage.com/subscribe/post?u=b9ba2bf94a52e703daf076861&amp;id=cb8a7b1c52" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                        <div id="mc_embed_signup_scroll" class="mc-form"> 
+                        <div id="mc_embed_signup_scroll" class="mc-form">
                             <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter Your Email Address" required>
                             <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
                             <div class="mc-news" aria-hidden="true"><input type="text" name="b_b9ba2bf94a52e703daf076861_cb8a7b1c52" tabindex="-1" value=""></div>
-                            <button id="mc-embedded-subscribe" class="default-btn" type="submit" name="subscribe"><span>Subscribe</span></button> 
-                        </div>    
+                            <button id="mc-embedded-subscribe" class="default-btn" type="submit" name="subscribe"><span>Subscribe</span></button>
+                        </div>
                     </form>
                     <!-- mailchimp-alerts Start -->
                     <div class="mailchimp-alerts">
@@ -507,77 +505,94 @@
 </div>
 <!-- Subscribe End -->
 <!-- Footer Start -->
-<footer class="footer-area">
-    <div class="main-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="single-widget pr-60">
-                        <div class="footer-logo pb-25">
-                            <a href="../"><object data="/assets/img/logo/red/out/taolingo_white.svg"  type="image/svg+xml" class="logo logo2" alt="Tao Lingo">
-                                <img src="/assets/img/logo/red/out/taolingo_white@2x.png" />
-                            </object></a>
-                        </div>
-                        <p>Learn the lingo with our revolutionary langauge training program fun for all ages. Speak like a native as you progress through English literacy. Powered by <a href="https://taolearning.org" target="_blank">Tao Learning</a>, a 501c3 Non-Profit. </p>
-                        <div class="footer-social">
-                            <ul>
-                                <li><a href="https://www.facebook.com/devitems/?ref=bookmarks"><i class="zmdi zmdi-facebook"></i></a></li>
-                                <li><a href="https://www.pinterest.com/devitemsllc/"><i class="zmdi zmdi-pinterest"></i></a></li>
-                                <li><a href="#"><i class="zmdi zmdi-vimeo"></i></a></li>
-                                <li><a href="https://twitter.com/devitemsllc"><i class="zmdi zmdi-twitter"></i></a></li>
-                            </ul>    
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="single-widget">
-                        <h3>information</h3>
-                        <ul>
-                            <li><a href="#">addmission</a></li>
-                            <li><a href="#">Academic Calender</a></li>
-                            <li><a routerLink="/event">Event List</a></li>
-                            <li><a href="#">Hostel &amp; Dinning</a></li>
-                            <li><a href="#">TimeTable</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-2 col-sm-6 col-xs-12">
-                    <div class="single-widget">
-                        <h3>useful links</h3>
-                        <ul>
-                            <li><a routerLink="/courses">our courses</a></li>
-                            <li><a routerLink="/about">about us</a></li>
-                            <li><a routerLink="/teachers">teachers &amp; faculty</a></li>
-                            <li><a href="#">teams &amp; conditions</a></li>
-                            <li><a routerLink="/event">our events</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="single-widget">
-                        <h3>get in touch</h3>
-                        <p>Your address goes here, Street<br>City, Roadno 785 New York</p>
-                        <p><i class="fa fa-phone"></i> 929-229-2918 China<br><i class="fa fa-phone"></i> 852 3008 2393 HK</p>
-                        <p>info@taolingo.com<br><a href="https://www.taolingo.com">www.taolingo.com</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>   
-    <div class="footer-bottom text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <p>Copyright © <a href="https://taofruit.com/" target="_blank">Tao Fruit</a> 2019. All Right Reserved By Tao Fruit.</p>
-                </div> 
-            </div>
-        </div>    
-    </div>
-</footer>
+<app-footer></app-footer>
 <!-- Footer End -->
-<div id="theModal"  tabindex="-1" role="dialog" class="modal fade text-center">
-    <div class="modal-dialog">
-        <div class="modal-content">
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="course-title">
+          <h3>$50 Value</h3>
         </div>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form enctype='application/json' class="pr-4 pl-4 pb-4" id="register"
+          action="https://prod-20.eastus.logic.azure.com:443/workflows/a8bed9230a7445338ffbbecaa103ec67/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=tz8jPn70VwbD7XM6aZw6T2gNB_sxAutBWp5I-hKv6cA"
+          method="post">
+          <input type="hidden" name="test" value="off">
+          <input type="hidden" name="owner" value="4eb04692-01f8-e911-a812-000d3a593b1e">
+          <input type="hidden" name="website" value="Tao Lingo">
+          <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
+          <input type="text" name="_gotcha" style="display:none" />
+          <div class="row text-center">
+          <a _ngcontent-asq-c67="" href="../"><object _ngcontent-asq-c67="" data="/assets/img/logo/red/out/taolingo_dark.svg"
+              type="image/svg+xml" alt="Tao Lingo" class="logo logo1"><img _ngcontent-asq-c67=""
+                src="/assets/img/logo/red/out/taolingo_dark@2x.png"></object></a></div>
+          <div class="row">
+            <p class="lead text-center text-light p-2">Fill out the form to get a free course.</p>
+            <div class="col-sm-6">
+              <div class="form-group md-form">
+                <input type="text" name="firstname" class="form-control input-material" placeholder="First Name"
+                  autocomplete="off" required>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group md-form">
+                <input type="text" name="lastname" class="form-control input-material" placeholder="Last Name"
+                  autocomplete="off" required>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group md-form">
+                <textarea id="message" name="message" maxlength="1500" class="form-control text-light input-material"
+                  placeholder="What would you like to learn？" rows="3"></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group md-form">
+                <input type="email" name="email" class="form-control input-material" placeholder="Email Address"
+                  autocomplete="off" required>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group md-form">
+                <select class="form-control input-material" name="interest" id="interest">
+                  <option value="Level" selected="selected">Choose a Level</option>
+                  <option value="Beginner">Beginner</option>
+                  <option value="Intermediate">Intermediate</option>
+                  <option value="Advanced">Advanced</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group md-form">
+                <input type="tel" id="tel" name="tel" class="form-control input-material" autocomplete="off" required
+                  placeholder="Phone Number">
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <h3 class="text-center" id="exampleModalLongTitle">1 Free Class</h3>
+            </div>
+          </div>
+          <div class="form-group text-center">
+            <div id="js-contact-result" data-success-msg="Success, Please check your email."
+              data-error-msg="Oops! Something went wrong"></div>
+            <button type="submit" class="btn default-btn">Submit</button>
+          </div><!-- // end .form-group -->
+        </form>
+      </div>
     </div>
+  </div>
 </div>
+
+

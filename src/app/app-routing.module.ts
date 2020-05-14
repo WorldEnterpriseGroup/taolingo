@@ -61,18 +61,18 @@ const routes: Routes = [{
 { path: 'signup',component: SignupComponent},
 { path: 'signup-form',component: SignupFormComponent},
 { path: 'step',component: StepComponent},
-{ path: 'teacher-detailstep',component: TeacherDetailsComponent},
+{ path: 'teacher-details',component: TeacherDetailsComponent},
 { path: 'teachers',component: TeachersComponent},
 { path: 'index-four',component: IndexFourComponent},
 { path: 'index-five',component: IndexFiveComponent},
 { path: 'header',component: HeaderComponent},
 {path:'',redirectTo:'index',pathMatch:'full'},
-{path:'**',redirectTo:'index',},
+{path: '**', redirectTo:'index'}
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule {

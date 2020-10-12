@@ -7,57 +7,71 @@
     </button>
 </div>
 <div class="modal-body">
-    <form enctype='application/json' class="pr-4 pl-4 pb-4" id="register" action="https://prod-20.eastus.logic.azure.com:443/workflows/a8bed9230a7445338ffbbecaa103ec67/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=tz8jPn70VwbD7XM6aZw6T2gNB_sxAutBWp5I-hKv6cA" method="post">
+    <form [formGroup]="registerForm" (ngSubmit)="formSubmit()" enctype='application/json' class="pr-4 pl-4 pb-4" id="register" action="https://door.taolearning.org/api/form" method="post">
         <input type="hidden" name="test" value="off">
         <input type="hidden" name="owner" value="4eb04692-01f8-e911-a812-000d3a593b1e">
         <input type="hidden" name="website" value="Tao Lingo">
         <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
         <input type="text" name="_gotcha" style="display:none" />
+        <input type="hidden" name="token" value="">
+        <input type="hidden" name="formType" value="registration">
         <div class="row text-center">
-                <a href="../"><object data="img/logo/red/out/taolingo_white.svg"  type="image/svg+xml" class="logo1" alt="Tao Lingo">
-                    <img src="img/logo/red/out/taolingo_white@2x.png" />
-                </object></a></div>
+                <a _ngcontent-asq-c67="" href="../"><object _ngcontent-asq-c67="" data="/assets/img/logo/red/out/taolingo_dark.svg"
+                    type="image/svg+xml" alt="Tao Lingo" class="logo logo1"><img _ngcontent-asq-c67=""
+                      src="/assets/img/logo/red/out/taolingo_dark@2x.png"></object></a></div>
                 <div class="row">
             <p class="lead text-center text-light p-2">Fill out the form to get one free lesson.</p>
             <div class="col-sm-6">
                 <div class="form-group md-form">
-                    <input type="text" name="firstname" class="form-control input-material" placeholder="First Name" autocomplete="off" required>
+                    <input type="text" formControlName="firstname" name="firstname" class="form-control input-material" placeholder="First Name">
+                    <span *ngIf="!registerForm.get('firstname').valid && registerForm.get('firstname').touched" class="help-block">* First Name
+                      name is required</span>
                 </div>
             </div>
             <div class="col-sm-6">
                 <div class="form-group md-form">
-                    <input type="text" name="lastname" class="form-control input-material" placeholder="Last Name" autocomplete="off" required>
+                    <input type="text" name="lastname" formControlName="lastname" class="form-control input-material" placeholder="Last Name" >
+                    <span *ngIf="!registerForm.get('lastname').valid && registerForm.get('lastname').touched" class="help-block">* Last Name
+                      name is required</span>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-12">
                 <div class="form-group md-form">
-                    <textarea id="message" name="message" maxlength="1500" class="form-control text-light input-material" placeholder="What would you like to learn？" rows="3"></textarea>
+                    <textarea id="message" name="message" formControlName="message" maxlength="1500" class="form-control text-light input-material" placeholder="What would you like to learn？" rows="3"></textarea>
+                    <span *ngIf="!registerForm.get('message').valid && registerForm.get('message').touched" class="help-block">* Message
+                       is required</span>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-6">
                 <div class="form-group md-form">
-                    <input type="email" name="email" class="form-control input-material" placeholder="Email Address" autocomplete="off" required>
+                    <input type="email" name="email" formControlName="email" class="form-control input-material" placeholder="Email Address" >
+                    <span *ngIf="!registerForm.get('email').valid && registerForm.get('email').touched" class="help-block">* Email Address
+                      is invalid</span>
                 </div>
             </div>
             <div class="col-sm-6">
                 <div class="form-group md-form">
-                    <select class="form-control input-material" name="interest" id="interest">
-                        <option value="" selected="selected">Choose a Level</option>
+                    <select class="form-control input-material" formControlName="interest" name="interest" id="interest">
+                        <option value="" [selected]="'Choose a Level'">Choose a Level</option>
                         <option value="Beginner">Beginner</option>
                         <option value="Social">Social</option>
                         <option value="Business">Business</option>
                     </select>
+                    <span *ngIf="!registerForm.get('interest').valid && registerForm.get('interest').touched" class="help-block">* Interest
+                      is required.</span>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-6">
                 <div class="form-group md-form">
-                    <input type="tel" id="tel" name="tel" class="form-control input-material" autocomplete="off" required placeholder="Phone Number">
+                    <input type="tel" id="tel" name="tel" formControlName="tel" class="form-control input-material"   placeholder="Phone Number">
+                    <span *ngIf="!registerForm.get('tel').valid && registerForm.get('tel').touched" class="help-block">* Phone number
+                      is required.</span>
                 </div>
             </div>
             <div class="col-sm-6">

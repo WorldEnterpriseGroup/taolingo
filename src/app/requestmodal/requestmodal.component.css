@@ -1,0 +1,13 @@
+.form-group span{
+    position: absolute;
+    margin: 0;
+    font-size: x-small;
+    color: red;
+  }
+  .form-control.ng-invalid.ng-touched {
+    border: 1px red solid;
+  }
+  .form-control.ng-valid {
+    border: 1px forestgreen solid;
+  }
+  

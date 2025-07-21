@@ -165,7 +165,7 @@ textarea {
     transition: all 0.5s ease-out 0s;
 }
 .banner-area {
-  background: rgba(0, 0, 0, 0) url("../img/banner/banner.jpg") no-repeat scroll center center / cover ;
+  background: rgba(0, 0, 0, 0) url("../img/banner/banner.webp") no-repeat scroll center center / cover ;
   position: relative;
   width: 100%;
   z-index: 1;
@@ -1235,7 +1235,7 @@ textarea {
     color: #EC1C23;
 }
 .notice-video {
-    background: rgba(0, 0, 0, 0) url("../img/notice/video.jpg") repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0) url("../img/notice/video.webp") repeat scroll 0 0;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -1272,7 +1272,7 @@ textarea {
 /*  5. Choose CSS
 /*----------------------------------------*/
 .choose-area{
-    background: url(../img/choose/choose-bd.jpg);
+    background: url(../img/choose/choose-bd.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -1411,7 +1411,7 @@ textarea {
 .course-img a:hover::after, .course-img:hover .course-hover{opacity: 1}
 .courses-area.two{
     position: relative;
-    background: url(../img/course/course-bg.jpg);
+    background: url(../img/course/course-bg.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -1800,7 +1800,7 @@ textarea {
 /*  8. Testimonial CSS
 /*----------------------------------------*/
 .testimonial-area{
-    background: url(../img/testimonial/testimonial-bg.jpg);
+    background: url(../img/testimonial/testimonial-bg.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
